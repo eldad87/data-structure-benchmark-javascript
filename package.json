@@ -1,0 +1,13 @@
+{
+  "name": "Benchmark data strucutre for 2D grids",
+  "description": "Benchmard 2D grids implementation using Objects, Arrays and Assositavie Arrays",
+  "repository": "https://github.com/eldad87/data-structure-benchmark-javascript",
+  "license": {
+    "type": "MIT",
+    "url": "https://www.opensource.org/licenses/mit-license.php"
+  },
+  "dependencies": {
+    "benchmark": "^2.1.4",
+    "node-gyp-install": "^2.2.0"
+  }
+}
