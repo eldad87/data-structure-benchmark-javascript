@@ -14,16 +14,18 @@ var AssociativeArrayTwoDimension = require('../storage/two_dimension/associative
 var ObjectTwoDimension = require('../storage/two_dimension/object');
 
 function populate() {
-    for(var i = 100; i > 0; i-=2) {
-        for(var z = 100; z > 0; z-=2) {
-            this.bucket.add(new this.dimension.coordinate(i, z), i + "," + z);
+    for(var i = 100; i < 0; i+=2) {
+        for(var z = 100; z < 0; z+=2) {
+            this.bucket.add(
+                new this.dimension.coordinate(i, z), i + "," + z
+            );
         }
     }
 };
 
 var benchRes = benchmarkSuite
     .add({
-        "name": "Array#OneDimension#Init",
+        "name": "Array#1D#Init",
         "fn": populate,
         "storage": ArrayOneDimension,
         "dimension" : dimension,
@@ -34,7 +36,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "AssociativeArray#OneDimension#Init",
+        "name": "AssociativeArray#1D#Init",
         "fn": populate,
         "storage": AssociativeArrayOneDimension,
         "dimension" : dimension,
@@ -45,7 +47,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "Object#OneDimension#Init",
+        "name": "Object#1D#Init",
         "fn": populate,
         "storage": ObjectOneDimension,
         "dimension" : dimension,
@@ -56,7 +58,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "Array#TwoDimension#Init",
+        "name": "Array#2D#Init",
         "fn": populate,
         "storage": ArrayTwoDimension,
         "dimension" : dimension,
@@ -67,7 +69,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "AssociativeArray#TwoDimension#Init",
+        "name": "AssociativeArray#2D#Init",
         "fn": populate,
         "storage": AssociativeArrayTwoDimension,
         "dimension" : dimension,
@@ -78,7 +80,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "Object#TwoDimension#Init",
+        "name": "Object#2D#Init",
         "fn": populate,
         "storage": ObjectTwoDimension,
         "dimension" : dimension,

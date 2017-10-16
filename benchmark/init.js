@@ -6,16 +6,12 @@ var dimension = require('../storage/dimension');
 
 // One dimension Storage
 var ArrayOneDimension = require('../storage/one_dimension/array');
-var AssociativeArrayOneDimension = require('../storage/one_dimension/associative_array');
-var ObjectOneDimension = require('../storage/one_dimension/object');
 // Two dimension Storage
 var ArrayTwoDimension = require('../storage/two_dimension/array');
-var AssociativeArrayTwoDimension = require('../storage/two_dimension/associative_array');
-var ObjectTwoDimension = require('../storage/two_dimension/object');
 
 var benchRes = benchmarkSuite
     .add({
-        "name": "Array#OneDimension#Init",
+        "name": "Array#1D#Init",
         "fn": function() {
             this.bucket.init(null);
         },
@@ -27,7 +23,7 @@ var benchRes = benchmarkSuite
         "initCount": 5
     })
     .add({
-        "name": "Array#TwoDimension#Init",
+        "name": "Array#2D#Init",
         "fn": function() {
             this.bucket.init(null);
         },
